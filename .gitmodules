@@ -13,9 +13,3 @@
 [submodule "lib/robotlegs2-starling-viewmap"]
 	path = lib/robotlegs2-starling-viewmap
 	url = git@github.com:jamieowen/robotlegs2-starling-viewmap.git
-[submodule "lib/AS3-StateMachine-Base"]
-	path = lib/AS3-StateMachine-Base
-	url = git@github.com:AS3StateMachine/AS3-StateMachine-Base.git
-[submodule "lib/as3-signals"]
-	path = lib/as3-signals
-	url = git@github.com:robertpenner/as3-signals.git

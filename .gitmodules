@@ -1,6 +1,3 @@
-[submodule "lib/robotlegs-framework"]
-	path = lib/robotlegs-framework
-	url = git@github.com:robotlegs/robotlegs-framework.git
 [submodule "lib/feathers"]
 	path = lib/feathers
 	url = git@github.com:joshtynjala/feathers.git

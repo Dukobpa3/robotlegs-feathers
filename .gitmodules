@@ -22,3 +22,6 @@
 [submodule "lib/as3-signals"]
 	path = lib/as3-signals
 	url = git@github.com:robertpenner/as3-signals.git
+[submodule "lib/robotlegs-extensions-SignalCommandMap"]
+	path = lib/robotlegs-extensions-SignalCommandMap
+	url = git@github.com:robotlegs/robotlegs-extensions-SignalCommandMap.git

@@ -10,9 +10,6 @@
 [submodule "lib/robotlegs-utilities-macrobot"]
 	path = lib/robotlegs-utilities-macrobot
 	url = git@github.com:alebianco/robotlegs-utilities-macrobot.git
-[submodule "lib/robotlegs-extensions-SignalStateMachine"]
-	path = lib/robotlegs-extensions-SignalStateMachine
-	url = git@github.com:DavidWhittingham/robotlegs-extensions-SignalStateMachine.git
 [submodule "lib/robotlegs2-starling-viewmap"]
 	path = lib/robotlegs2-starling-viewmap
 	url = git@github.com:jamieowen/robotlegs2-starling-viewmap.git
@@ -22,6 +19,3 @@
 [submodule "lib/as3-signals"]
 	path = lib/as3-signals
 	url = git@github.com:robertpenner/as3-signals.git
-[submodule "lib/robotlegs-extensions-SignalCommandMap"]
-	path = lib/robotlegs-extensions-SignalCommandMap
-	url = git@github.com:robotlegs/robotlegs-extensions-SignalCommandMap.git

@@ -1,34 +1,35 @@
-<?xml version="1.0"?>
-<s:Application
-    xmlns:fx="http://ns.adobe.com/mxml/2009"
-    xmlns:s="library://ns.adobe.com/flex/spark"
+package com.playtika.zonk.client {
+    import com.playtika.zonk.client.config.DebugConfig;
+    import com.playtika.zonk.client.config.RootConfig;
+    import com.playtika.zonk.client.config.StarlingConfig;
+    import com.playtika.zonk.client.view.StarlingRoot;
 
-    backgroundAlpha="0"
-    frameRate="60"
-    addedToStage="onAddedToStage(event)"
+    import flash.display.MovieClip;
+    import flash.display.Stage;
+    import flash.display.StageAlign;
+    import flash.display.StageScaleMode;
+    import flash.events.Event;
+    import flash.geom.Rectangle;
 
-    applicationDPI="120"
-    >
+    import robotlegs.bender.bundles.mvcs.MVCSBundle;
+    import robotlegs.bender.extensions.contextView.ContextView;
+    import robotlegs.bender.framework.api.IContext;
+    import robotlegs.bender.framework.impl.Context;
+    import robotlegs.extensions.starlingViewMap.StarlingViewMapExtension;
 
-    <fx:Script><![CDATA[
-        import com.playtika.zonk.client.config.DebugConfig;
-        import com.playtika.zonk.client.config.RootConfig;
-        import com.playtika.zonk.client.config.StarlingConfig;
-        import com.playtika.zonk.client.view.StarlingRoot;
+    import starling.core.Starling;
+    import starling.events.ResizeEvent;
 
-        import mx.events.ResizeEvent;
 
-        import robotlegs.bender.bundles.mvcs.MVCSBundle;
-        import robotlegs.bender.extensions.contextView.ContextView;
-        import robotlegs.bender.framework.api.IContext;
-        import robotlegs.bender.framework.impl.Context;
-        import robotlegs.extensions.starlingViewMap.StarlingViewMapExtension;
-
-        import starling.core.Starling;
-
+    [SWF(frameRate=60, backgroundColor=0)]
+    public class DocumentClass extends MovieClip {
 
         private var _context:IContext;
         private var _starling:Starling;
+
+        public function DocumentClass() {
+            addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+        }
 
         private function onAddedToStage(event:Event):void {
             stage.align = StageAlign.TOP_LEFT;
@@ -58,6 +59,9 @@
 
         private function configureContext():void {
             _context = new Context();
+
+            _context.injector.map(Stage).toValue(stage);
+
             _context.install(MVCSBundle, StarlingViewMapExtension);
             _context.configure(new ContextView(this), _starling);
 
@@ -71,5 +75,7 @@
             _starling.antiAliasing = 1;
             _starling.start();
         }
-        ]]></fx:Script>
-</s:Application>
+
+    }
+
+}

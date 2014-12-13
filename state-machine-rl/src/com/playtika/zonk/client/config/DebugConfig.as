@@ -5,9 +5,8 @@ package com.playtika.zonk.client.config {
     import com.playtika.zonk.client.command.debug.ConsoleToggleCommand;
     import com.playtika.zonk.client.command.debug.events.DebugCommandEvent;
     import com.playtika.zonk.client.mediator.debug.DebugViewMediator;
+    import com.playtika.zonk.client.service.layout.LayoutService;
     import com.playtika.zonk.client.view.debug.DebugView;
-
-    import mx.core.IVisualElementContainer;
 
     import robotlegs.bender.extensions.contextView.ContextView;
     import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
@@ -29,6 +28,9 @@ package com.playtika.zonk.client.config {
         [Inject]
         public var contextView:ContextView;
 
+        [Inject]
+        public var layout:LayoutService;
+
         public function configure():void {
             mediatorMap
                     .map(DebugView)
@@ -40,10 +42,8 @@ package com.playtika.zonk.client.config {
 
 
             var debugView:DebugView = new DebugView();
-            debugView.bottom = 5;
-            debugView.right = 5;
-
-            IVisualElementContainer(contextView.view).addElement(debugView);
+            injector.injectInto(debugView);
+            contextView.view.addChild(debugView);
         }
     }
 }

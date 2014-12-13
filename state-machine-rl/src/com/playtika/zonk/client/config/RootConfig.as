@@ -2,17 +2,20 @@
  * Created by Dukobpa3 on 13.12.2014.
  */
 package com.playtika.zonk.client.config {
+    import com.playtika.zonk.client.service.layout.LayoutService;
+
     import robotlegs.bender.framework.api.IConfig;
-    import robotlegs.bender.framework.api.IContext;
+    import robotlegs.bender.framework.api.IInjector;
 
 
     public class RootConfig implements IConfig {
 
         [Inject]
-        private var context:IContext;
+        public var injector:IInjector;
+
 
         public function configure():void {
-
+            injector.map(LayoutService).asSingleton();
         }
     }
 }

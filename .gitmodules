@@ -1,9 +1,3 @@
-[submodule "lib/feathers"]
-	path = lib/feathers
-	url = git@github.com:joshtynjala/feathers.git
-[submodule "lib/Starling-Framework"]
-	path = lib/Starling-Framework
-	url = git@github.com:Gamua/Starling-Framework.git
 [submodule "lib/robotlegs-utilities-macrobot"]
 	path = lib/robotlegs-utilities-macrobot
 	url = git@github.com:alebianco/robotlegs-utilities-macrobot.git

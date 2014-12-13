@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<s:Application
+    xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark" xmlns:rl2="http://ns.robotlegs.org/flex/rl2"
+    xmlns:mvcs="robotlegs.bender.bundles.mvcs.*" xmlns:sview="robotlegs.extensions.starlingViewMap.*"
+    xmlns:config="com.playtika.zonk.config.*"
+
+    backgroundAlpha="0"
+    frameRate="60"
+    addedToStage="onAddedToStage(event)"
+    >
+
+    <!-- <fx:Declarations>
+        <rl2:ContextBuilder>
+            <mvcs:MVCSBundle/>
+            <sview:StarlingViewMapExtension/>
+            <config:RootConfig/>
+            <config:DebugConfig/>
+            <config:StarlingConfig/>
+        </rl2:ContextBuilder>
+    </fx:Declarations> -->
+
+    <fx:Script><![CDATA[
+        import com.playtika.zonk.config.DebugConfig;
+        import com.playtika.zonk.config.RootConfig;
+        import com.playtika.zonk.config.StarlingConfig;
+
+        import mx.events.ResizeEvent;
+
+        import robotlegs.bender.bundles.mvcs.MVCSBundle;
+        import robotlegs.bender.extensions.contextView.ContextView;
+        import robotlegs.bender.framework.api.IContext;
+        import robotlegs.bender.framework.impl.Context;
+        import robotlegs.extensions.starlingViewMap.StarlingViewMapExtension;
+
+        import starling.core.Starling;
+
+        private var context:IContext;
+        private var starling:Starling;
+
+        private function onAddedToStage(event:Event):void {
+            stage.align = StageAlign.TOP_LEFT;
+            stage.scaleMode = StageScaleMode.NO_SCALE;
+
+            starling = new Starling(StarlingRoot, stage);
+
+            context = new Context();
+            context.install(MVCSBundle, StarlingViewMapExtension);
+            context.configure(new ContextView(this), starling);
+
+            context.configure(RootConfig);
+            context.configure(DebugConfig);
+            context.configure(StarlingConfig);
+
+            starling.showStats = true;
+            starling.antiAliasing = 1;
+            starling.start();
+
+            stage.addEventListener(ResizeEvent.RESIZE, onResize);
+        }
+
+        private function onResize(event:ResizeEvent):void {
+            // set rectangle dimensions for viewPort:
+            var viewPortRectangle:Rectangle = new Rectangle();
+            viewPortRectangle.width = stage.stageWidth;
+            viewPortRectangle.height = stage.stageHeight;
+
+            // resize the viewport:
+            Starling.current.viewPort = viewPortRectangle;
+
+            // assign the new stage width and height:
+            starling.stage.stageWidth = stage.stageWidth;
+            starling.stage.stageHeight = stage.stageHeight;
+        }
+        ]]></fx:Script>
+</s:Application>

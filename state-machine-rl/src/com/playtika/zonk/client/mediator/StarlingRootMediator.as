@@ -2,9 +2,9 @@
  * Created by Dukobpa3 on 13.12.2014.
  */
 package com.playtika.zonk.client.mediator {
-    import com.playtika.zonk.command.debug.events.DebugCommandEvent;
-    import com.playtika.zonk.view.StarlingRoot;
-    import com.playtika.zonk.view.events.StarlingViewEvent;
+    import com.playtika.zonk.client.command.debug.events.DebugCommandEvent;
+    import com.playtika.zonk.client.view.StarlingRoot;
+    import com.playtika.zonk.client.view.events.StarlingViewEvent;
 
     import robotlegs.extensions.starlingViewMap.impl.StarlingMediator;
 
@@ -24,6 +24,10 @@ package com.playtika.zonk.client.mediator {
 
         private function onButtonTriggered(event:StarlingViewEvent):void {
             dispatch(new DebugCommandEvent(DebugCommandEvent.CONSOLE_TOGGLE));
+        }
+
+        private function get view():StarlingRoot {
+            return _view
         }
     }
 }

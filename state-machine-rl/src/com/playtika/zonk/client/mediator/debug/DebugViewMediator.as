@@ -2,9 +2,9 @@
  * Created by Dukobpa3 on 13.12.2014.
  */
 package com.playtika.zonk.client.mediator.debug {
-    import com.playtika.zonk.command.debug.events.DebugCommandEvent;
-    import com.playtika.zonk.view.debug.DebugView;
-    import com.playtika.zonk.view.debug.events.DebugViewEvent;
+    import com.playtika.zonk.client.command.debug.events.DebugCommandEvent;
+    import com.playtika.zonk.client.view.debug.DebugView;
+    import com.playtika.zonk.client.view.debug.events.DebugViewEvent;
 
     import robotlegs.bender.bundles.mvcs.Mediator;
 

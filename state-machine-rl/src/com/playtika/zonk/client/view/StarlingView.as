@@ -2,7 +2,7 @@
  * Created by Dukobpa3 on 13.12.2014.
  */
 package com.playtika.zonk.client.view {
-    import com.playtika.zonk.view.events.StarlingViewEvent;
+    import com.playtika.zonk.client.view.events.StarlingViewEvent;
 
     import feathers.controls.Button;
     import feathers.controls.Panel;

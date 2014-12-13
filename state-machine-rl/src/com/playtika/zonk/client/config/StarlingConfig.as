@@ -2,8 +2,8 @@
  * Created by Dukobpa3 on 13.12.2014.
  */
 package com.playtika.zonk.client.config {
-    import com.playtika.zonk.mediator.StarlingRootMediator;
-    import com.playtika.zonk.view.StarlingRoot;
+    import com.playtika.zonk.client.mediator.StarlingRootMediator;
+    import com.playtika.zonk.client.view.StarlingRoot;
 
     import robotlegs.bender.extensions.contextView.ContextView;
     import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;

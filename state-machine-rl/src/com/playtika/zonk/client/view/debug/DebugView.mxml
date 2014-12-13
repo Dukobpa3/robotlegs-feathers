@@ -6,7 +6,7 @@
 
 
     <fx:Script><![CDATA[
-        import com.playtika.zonk.view.debug.events.DebugViewEvent;
+        import com.playtika.zonk.client.view.debug.events.DebugViewEvent;
         ]]></fx:Script>
 
     <s:Button label="click" click="dispatchEvent(new DebugViewEvent(DebugViewEvent.CONSOLE_TOGGLE_CLICK))"/>

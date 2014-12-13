@@ -11,10 +11,10 @@
     >
 
     <fx:Script><![CDATA[
-        import com.playtika.zonk.config.DebugConfig;
-        import com.playtika.zonk.config.RootConfig;
-        import com.playtika.zonk.config.StarlingConfig;
-        import com.playtika.zonk.view.StarlingRoot;
+        import com.playtika.zonk.client.config.DebugConfig;
+        import com.playtika.zonk.client.config.RootConfig;
+        import com.playtika.zonk.client.config.StarlingConfig;
+        import com.playtika.zonk.client.view.StarlingRoot;
 
         import mx.events.ResizeEvent;
 

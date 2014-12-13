@@ -2,10 +2,10 @@
  * Created by Dukobpa3 on 13.12.2014.
  */
 package com.playtika.zonk.client.config {
-    import com.playtika.zonk.command.debug.ConsoleToggleCommand;
-    import com.playtika.zonk.command.debug.events.DebugCommandEvent;
-    import com.playtika.zonk.mediator.debug.DebugViewMediator;
-    import com.playtika.zonk.view.debug.DebugView;
+    import com.playtika.zonk.client.command.debug.ConsoleToggleCommand;
+    import com.playtika.zonk.client.command.debug.events.DebugCommandEvent;
+    import com.playtika.zonk.client.mediator.debug.DebugViewMediator;
+    import com.playtika.zonk.client.view.debug.DebugView;
 
     import mx.core.IVisualElementContainer;
 

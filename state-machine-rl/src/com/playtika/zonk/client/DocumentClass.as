@@ -12,10 +12,10 @@ package com.playtika.zonk.client {
     import flash.geom.Rectangle;
 
     import robotlegs.bender.bundles.mvcs.MVCSBundle;
+    import robotlegs.bender.bundles.starling.StarlingBundle;
     import robotlegs.bender.extensions.contextView.ContextView;
     import robotlegs.bender.framework.api.IContext;
     import robotlegs.bender.framework.impl.Context;
-    import robotlegs.extensions.starlingViewMap.StarlingViewMapExtension;
 
     import starling.core.Starling;
     import starling.events.ResizeEvent;
@@ -62,7 +62,7 @@ package com.playtika.zonk.client {
 
             _context.injector.map(Stage).toValue(stage);
 
-            _context.install(MVCSBundle, StarlingViewMapExtension);
+            _context.install(MVCSBundle, StarlingBundle);
             _context.configure(new ContextView(this), _starling);
 
             _context.configure(RootConfig);
@@ -75,7 +75,5 @@ package com.playtika.zonk.client {
             _starling.antiAliasing = 1;
             _starling.start();
         }
-
     }
-
 }

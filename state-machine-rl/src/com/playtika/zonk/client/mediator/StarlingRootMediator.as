@@ -6,7 +6,7 @@ package com.playtika.zonk.client.mediator {
     import com.playtika.zonk.client.view.StarlingRoot;
     import com.playtika.zonk.client.view.events.StarlingViewEvent;
 
-    import robotlegs.extensions.starlingViewMap.impl.StarlingMediator;
+    import robotlegs.bender.extensions.starlingViewMap.impl.StarlingMediator;
 
 
     public class StarlingRootMediator extends StarlingMediator {

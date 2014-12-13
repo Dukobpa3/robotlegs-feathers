@@ -1,10 +1,9 @@
 /**
  * Created by Dukobpa3 on 13.12.2014.
  */
-package com.playtika.zonk {
+package com.playtika.zonk.client.view {
     import com.playtika.zonk.view.StarlingView;
-
-    import feathers.themes.MetalWorksMobileTheme;
+    import com.playtika.zonk.view.theme.ZonkTheme;
 
     import starling.display.Sprite;
     import starling.events.Event;
@@ -12,7 +11,7 @@ package com.playtika.zonk {
 
     public class StarlingRoot extends Sprite {
 
-        private var _theme:MetalWorksMobileTheme;
+        private var _theme:ZonkTheme;
 
         private var _view:StarlingView;
 
@@ -22,7 +21,7 @@ package com.playtika.zonk {
         }
 
         private function onAddedToStage(event:Event):void {
-            _theme = new MetalWorksMobileTheme(false);
+            _theme = new ZonkTheme(true);
 
             _view = new StarlingView();
             addChild(_view);

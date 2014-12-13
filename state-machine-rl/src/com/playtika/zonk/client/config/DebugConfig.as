@@ -1,7 +1,7 @@
 /**
  * Created by Dukobpa3 on 13.12.2014.
  */
-package com.playtika.zonk.config {
+package com.playtika.zonk.client.config {
     import com.playtika.zonk.command.debug.ConsoleToggleCommand;
     import com.playtika.zonk.command.debug.events.DebugCommandEvent;
     import com.playtika.zonk.mediator.debug.DebugViewMediator;

@@ -1,8 +1,9 @@
 /**
  * Created by Dukobpa3 on 13.12.2014.
  */
-package com.playtika.zonk.config {
-    import com.playtika.zonk.StarlingRoot;
+package com.playtika.zonk.client.config {
+    import com.playtika.zonk.mediator.StarlingRootMediator;
+    import com.playtika.zonk.view.StarlingRoot;
 
     import robotlegs.bender.extensions.contextView.ContextView;
     import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
@@ -10,8 +11,6 @@ package com.playtika.zonk.config {
     import robotlegs.bender.framework.api.IConfig;
     import robotlegs.bender.framework.api.IContext;
     import robotlegs.bender.framework.api.IInjector;
-
-    import starling.core.Starling;
 
 
     public class StarlingConfig implements IConfig {
@@ -32,7 +31,7 @@ package com.playtika.zonk.config {
 
         public function configure():void {
 
-
+            mediatorMap.map(StarlingRoot).toMediator(StarlingRootMediator);
         }
     }
 }

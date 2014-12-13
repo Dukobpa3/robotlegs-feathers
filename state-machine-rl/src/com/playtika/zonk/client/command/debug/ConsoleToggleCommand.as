@@ -1,7 +1,7 @@
 /**
  * Created by Dukobpa3 on 13.12.2014.
  */
-package com.playtika.zonk.command.debug {
+package com.playtika.zonk.client.command.debug {
     import robotlegs.bender.bundles.mvcs.Command;
 
     import spark.components.Alert;

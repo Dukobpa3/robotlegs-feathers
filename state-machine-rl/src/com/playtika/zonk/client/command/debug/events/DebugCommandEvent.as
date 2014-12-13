@@ -1,7 +1,7 @@
 /**
  * Created by Dukobpa3 on 13.12.2014.
  */
-package com.playtika.zonk.command.debug.events {
+package com.playtika.zonk.client.command.debug.events {
     import flash.events.Event;
 
 

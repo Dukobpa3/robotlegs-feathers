@@ -1,7 +1,9 @@
 /**
  * Created by Dukobpa3 on 13.12.2014.
  */
-package com.playtika.zonk.view {
+package com.playtika.zonk.client.view {
+    import com.playtika.zonk.view.events.StarlingViewEvent;
+
     import feathers.controls.Button;
     import feathers.controls.Panel;
 
@@ -22,6 +24,11 @@ package com.playtika.zonk.view {
             addChild(_button);
 
             _button.label = "Click";
+            _button.addEventListener(Event.TRIGGERED, onButtonTriggered);
+        }
+
+        private function onButtonTriggered(event:Event):void {
+            dispatchEvent(new StarlingViewEvent(StarlingViewEvent.STARLING_VIEW_BUTTON_CLICKED));
         }
     }
 }

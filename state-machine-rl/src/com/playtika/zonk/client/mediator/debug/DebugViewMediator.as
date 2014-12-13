@@ -1,7 +1,7 @@
 /**
  * Created by Dukobpa3 on 13.12.2014.
  */
-package com.playtika.zonk.mediator.debug {
+package com.playtika.zonk.client.mediator.debug {
     import com.playtika.zonk.command.debug.events.DebugCommandEvent;
     import com.playtika.zonk.view.debug.DebugView;
     import com.playtika.zonk.view.debug.events.DebugViewEvent;
@@ -23,7 +23,7 @@ package com.playtika.zonk.mediator.debug {
         }
 
         private function onConsoleToggleClick(event:DebugViewEvent):void {
-            eventDispatcher.dispatchEvent(new DebugCommandEvent(DebugCommandEvent.CONSOLE_TOGGLE));
+            dispatch(new DebugCommandEvent(DebugCommandEvent.CONSOLE_TOGGLE));
         }
     }
 }

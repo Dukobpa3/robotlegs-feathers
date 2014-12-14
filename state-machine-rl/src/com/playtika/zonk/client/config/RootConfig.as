@@ -15,7 +15,7 @@ package com.playtika.zonk.client.config {
 
 
         public function configure():void {
-            injector.map(LayoutService).asSingleton();
+
         }
     }
 }

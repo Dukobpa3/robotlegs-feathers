@@ -2,6 +2,7 @@
  * Created by Dukobpa3 on 13.12.2014.
  */
 package com.playtika.zonk.client.config {
+    import com.junkbyte.console.Cc;
     import com.playtika.zonk.client.command.debug.ConsoleToggleCommand;
     import com.playtika.zonk.client.command.debug.events.DebugCommandEvent;
     import com.playtika.zonk.client.mediator.debug.DebugViewMediator;
@@ -11,7 +12,9 @@ package com.playtika.zonk.client.config {
     import robotlegs.bender.extensions.contextView.ContextView;
     import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
     import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+    import robotlegs.bender.extensions.zonkLogger.ZonkLoggerExtension;
     import robotlegs.bender.framework.api.IConfig;
+    import robotlegs.bender.framework.api.IContext;
     import robotlegs.bender.framework.api.IInjector;
 
 
@@ -31,7 +34,19 @@ package com.playtika.zonk.client.config {
         [Inject]
         public var layout:LayoutService;
 
+        [Inject]
+        public var context:IContext;
+
         public function configure():void {
+
+            Cc.config.commandLineAllowed = true; // Enables full commandLine features
+            Cc.config.tracing = true; // also send traces to flash's normal trace()
+            Cc.config.maxLines = 2000; // change maximum log lines to 2000, default is 1000
+
+            Cc.startOnStage(contextView.view); // finally start with these config
+
+            context.install(ZonkLoggerExtension);
+
             mediatorMap
                     .map(DebugView)
                     .toMediator(DebugViewMediator);

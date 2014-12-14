@@ -2,6 +2,7 @@ package com.playtika.zonk.client {
     import com.playtika.zonk.client.config.DebugConfig;
     import com.playtika.zonk.client.config.RootConfig;
     import com.playtika.zonk.client.config.StarlingConfig;
+    import com.playtika.zonk.client.service.layout.LayoutService;
     import com.playtika.zonk.client.view.StarlingRoot;
 
     import flash.display.MovieClip;
@@ -14,6 +15,7 @@ package com.playtika.zonk.client {
     import robotlegs.bender.bundles.mvcs.MVCSBundle;
     import robotlegs.bender.bundles.starling.StarlingBundle;
     import robotlegs.bender.extensions.contextView.ContextView;
+    import robotlegs.bender.extensions.zonkLogger.ZonkLoggerExtension;
     import robotlegs.bender.framework.api.IContext;
     import robotlegs.bender.framework.impl.Context;
 
@@ -59,14 +61,15 @@ package com.playtika.zonk.client {
 
         private function configureContext():void {
             _context = new Context();
-
             _context.injector.map(Stage).toValue(stage);
+            _context.injector.map(LayoutService).asSingleton();
 
             _context.install(MVCSBundle, StarlingBundle);
             _context.configure(new ContextView(this), _starling);
 
-            _context.configure(RootConfig);
             _context.configure(DebugConfig);
+
+            _context.configure(RootConfig);
             _context.configure(StarlingConfig);
         }
 

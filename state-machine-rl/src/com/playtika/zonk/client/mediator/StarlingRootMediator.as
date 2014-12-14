@@ -6,20 +6,16 @@ package com.playtika.zonk.client.mediator {
     import com.playtika.zonk.client.view.StarlingRoot;
     import com.playtika.zonk.client.view.events.StarlingViewEvent;
 
-    import robotlegs.bender.extensions.starlingViewMap.impl.StarlingMediator;
-
+    import robotlegs.bender.bundles.starling.StarlingMediator;
 
     public class StarlingRootMediator extends StarlingMediator {
-
-        [Inject]
-        public var _view:StarlingRoot;
 
         public function StarlingRootMediator() {
             super();
         }
 
         override public function initialize():void {
-            _view.addEventListener(StarlingViewEvent.STARLING_VIEW_BUTTON_CLICKED, onButtonTriggered);
+            addViewListener(StarlingViewEvent.STARLING_VIEW_BUTTON_CLICKED, onButtonTriggered, StarlingViewEvent);
         }
 
         private function onButtonTriggered(event:StarlingViewEvent):void {
@@ -27,7 +23,7 @@ package com.playtika.zonk.client.mediator {
         }
 
         private function get view():StarlingRoot {
-            return _view
+            return StarlingRoot(viewComponent);
         }
     }
 }

@@ -31,13 +31,10 @@ package robotlegs.bender.extensions.zonkLogger.impl {
             Cc.add([timestamp, LogLevel.NAME[level], _context, source, parseMessage(message, params)], PRIORITY[level]);
         }
 
-        public function parseMessage(message:String, params:Array):String
-        {
-            if (params)
-            {
+        public function parseMessage(message:String, params:Array):String {
+            if (params) {
                 const numParams:int = params.length;
-                for (var i:int = 0; i < numParams; ++i)
-                {
+                for (var i:int = 0; i < numParams; ++i) {
                     message = message.split("{" + i + "}").join(params[i]);
                 }
             }

@@ -41,7 +41,6 @@ package com.playtika.zonk.client.service.layout {
                 if(config.parent != null){
                     object.x = config.parent.width - object.width - config.right;
                     object.y = config.parent.height - object.height - config.bottom;
-
                 } else {
                     object.x = stage.stageWidth - object.width - config.right;
                     object.y = stage.stageHeight - object.height - config.bottom;

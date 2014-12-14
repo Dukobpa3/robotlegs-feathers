@@ -12,7 +12,7 @@ package com.playtika.zonk.client.config {
     import robotlegs.bender.extensions.contextView.ContextView;
     import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
     import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-    import robotlegs.bender.extensions.zonkLogger.ZonkLoggerExtension;
+    import robotlegs.bender.extensions.ccLogger.CcLoggerExtension;
     import robotlegs.bender.framework.api.IConfig;
     import robotlegs.bender.framework.api.IContext;
     import robotlegs.bender.framework.api.IInjector;
@@ -43,9 +43,12 @@ package com.playtika.zonk.client.config {
             Cc.config.tracing = true; // also send traces to flash's normal trace()
             Cc.config.maxLines = 2000; // change maximum log lines to 2000, default is 1000
 
-            Cc.startOnStage(contextView.view); // finally start with these config
+            Cc.startOnStage(contextView.view, '`'); // finally start with these config
 
-            context.install(ZonkLoggerExtension);
+            Cc.width = contextView.view.stage.stageWidth;
+            Cc.height = contextView.view.stage.stageHeight;
+
+            context.install(CcLoggerExtension);
 
             mediatorMap
                     .map(DebugView)

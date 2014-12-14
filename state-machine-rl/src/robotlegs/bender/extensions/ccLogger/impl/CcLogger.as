@@ -1,7 +1,7 @@
 /**
  * Created by Dukobpa3 on 14.12.2014.
  */
-package robotlegs.bender.extensions.zonkLogger.impl {
+package robotlegs.bender.extensions.ccLogger.impl {
     import com.junkbyte.console.Cc;
 
     import robotlegs.bender.framework.api.IContext;
@@ -9,13 +9,13 @@ package robotlegs.bender.extensions.zonkLogger.impl {
     import robotlegs.bender.framework.api.LogLevel;
 
 
-    public class ZonkLogger implements ILogTarget {
+    public class CcLogger implements ILogTarget {
 
         private var _logFunc:Object;
 
         private var _context:IContext;
 
-        public function ZonkLogger(context:IContext) {
+        public function CcLogger(context:IContext) {
             _context = context;
 
             /*_logFunc[LogLevel.DEBUG] = Console.DEBUG;

@@ -10,32 +10,21 @@ package com.playtika.zonk.client.service.layout {
         private var _right:Number;
         private var _parent:Object;
 
-        public function LayoutConfig(config:Object) {
-            _top = config["top"];
-            _left = config["left"];
-            _bottom = config["bottom"];
-            _right = config["right"];
-            _parent = config["parent"];
+
+        public function LayoutConfig(position:Object) {
+            _top = position["top"];
+            _left = position["left"];
+            _bottom = position["bottom"];
+            _right = position["right"];
+
+            _parent = position["parent"];
         }
 
-        public function get top():Number {
-            return _top;
-        }
+        public function get top():Number { return _top; }
+        public function get left():Number { return _left; }
+        public function get bottom():Number { return _bottom; }
+        public function get right():Number { return _right; }
 
-        public function get left():Number {
-            return _left;
-        }
-
-        public function get bottom():Number {
-            return _bottom;
-        }
-
-        public function get right():Number {
-            return _right;
-        }
-
-        public function get parent():Object {
-            return _parent;
-        }
+        public function get parent():Object { return _parent; }
     }
 }

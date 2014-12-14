@@ -15,7 +15,6 @@ package com.playtika.zonk.client {
     import robotlegs.bender.bundles.mvcs.MVCSBundle;
     import robotlegs.bender.bundles.starling.StarlingBundle;
     import robotlegs.bender.extensions.contextView.ContextView;
-    import robotlegs.bender.extensions.zonkLogger.ZonkLoggerExtension;
     import robotlegs.bender.framework.api.IContext;
     import robotlegs.bender.framework.impl.Context;
 

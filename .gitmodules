@@ -3,7 +3,7 @@
 	url = git@github.com:alebianco/robotlegs-utilities-macrobot.git
 [submodule "lib/robotlegs2-starling-viewmap"]
 	path = lib/robotlegs2-starling-viewmap
-	url = git@github.com:jamieowen/robotlegs2-starling-viewmap.git
+	url = git@github.com:eggs-gd/robotlegs2-starling-viewmap.git
 [submodule "lib/robotlegs-utilities-starling"]
 	path = lib/robotlegs-utilities-starling
 	url = git@github.com:alebianco/robotlegs-utilities-starling.git
